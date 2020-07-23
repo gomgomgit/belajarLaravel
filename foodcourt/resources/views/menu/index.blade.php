@@ -18,7 +18,8 @@
 </head>
 <body>
 	<h3>Menu</h3>
-	<table border="2">
+	<h5><a href="/menu/create">Tambah data</a></h5>
+	<table border="3">
 		<thead>
 			<tr>
 				<th>Nama</th>
@@ -37,7 +38,7 @@
 				<td>{{$menu->stock}}</td>
 				<td>{{$menu->status ? 'Tersedia' : 'Habis'}}</td>
 				<td>{{$menu->price}}</td>
-				<td>{{$menu->image ? '$menu->image' : 'Not Available'}}</td>
+				<td>{{$menu->image ? $menu->image : 'Not Available'}}</td>
 			</tr>
 			@endforeach
 		</tbody>

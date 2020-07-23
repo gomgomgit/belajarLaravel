@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/menu', 'MenuController@index');
+Route::get('/menu/create', 'MenuController@create');
+Route::post('/menu/store', 'MenuController@store');

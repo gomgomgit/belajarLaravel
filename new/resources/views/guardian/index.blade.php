@@ -2,9 +2,18 @@
 <html>
 <head>
 	<title></title>
+
+	<style type="text/css">
+		body {
+			padding: 20px 100px;
+		}
+		td, th {
+			padding: 5px;
+		}
+	</style>
 </head>
 <body>
-
+	<h3>Data Wali</h3>
 	<table border="1" style="width: 100%">
 		<thead>
 			<tr>
@@ -15,6 +24,7 @@
 				<th>Tanggal Lahir</th>
 				<th>Alamat</th>
 				<th>Orangtua Kandung</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -27,10 +37,21 @@
 					<td>{{$guardian->birth_date}}</td>
 					<td>{{$guardian->address}}</td>
 					<td>{!!$guardian->is_parent ? 'v' : 'x'!!}</td>
+					<td><a href="/guardians/edit/{{$guardian->id}}">Edit</a> || <a href="/guardians/delete/{{$guardian->id}}">Delete</a></td>
+
+
+				{{-- 	<td>
+						<form action="{{ url('/guardians/delete/'.$guardian->id) }}" method="post">
+				        <input type="submit" value="X" id="delete_guardian_{{ $guardian->id }}" class="btn btn-xs">
+				    </form>
+  				</td> --}}
+
+
 				</tr>
 			@endforeach
 		</tbody>
 	</table>
+	<p><a href="/guardians/create">Create</a></p>
 
 </body>
 </html>
