@@ -37,7 +37,15 @@
 					<td>{{$guardian->birth_date}}</td>
 					<td>{{$guardian->address}}</td>
 					<td>{!!$guardian->is_parent ? 'v' : 'x'!!}</td>
-					<td><a href="/guardians/edit/{{$guardian->id}}">Edit</a> || <a href="/guardians/delete/{{$guardian->id}}">Delete</a></td>
+					<td>
+						<button>
+							<a href="/guardians/edit/{{$guardian->id}}">Edit</a>
+						</button>
+						<form action="/guardians/delete/{{$guardian->id}}" method="post">
+							@csrf @method('DELETE')
+							<button>Delete</button>
+						</form>
+					</td>
 
 
 				{{-- 	<td>

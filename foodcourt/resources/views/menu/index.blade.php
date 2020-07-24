@@ -12,7 +12,7 @@
 			border-collapse: collapse;
 		}
 		th, td {
-			padding: 5px;
+			padding: 3px;
 		}
 	</style>
 </head>
@@ -28,6 +28,7 @@
 				<th>Status</th>
 				<th>Harga</th>
 				<th>Gambar</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -39,6 +40,13 @@
 				<td>{{$menu->status ? 'Tersedia' : 'Habis'}}</td>
 				<td>{{$menu->price}}</td>
 				<td>{{$menu->image ? $menu->image : 'Not Available'}}</td>
+				<td>
+					<a href="/menu/edit/{{$menu->id}}">Edit</a>
+					<form method="post" action="/menu/delete/{{$menu->id}}">
+						@csrf @method('DELETE')
+						<button>Delete</button>
+					</form>
+				</td>
 			</tr>
 			@endforeach
 		</tbody>

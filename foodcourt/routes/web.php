@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/menu', 'MenuController@index');
 Route::get('/menu/create', 'MenuController@create');
 Route::post('/menu/store', 'MenuController@store');
+Route::get('/menu/edit/{id}', 'MenuController@edit');
+Route::put('/menu/update/{id}', 'MenuController@update');
+Route::delete('/menu/delete/{id}', 'MenuController@delete');

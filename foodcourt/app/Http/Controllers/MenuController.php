@@ -18,4 +18,16 @@ class MenuController extends Controller {
 		Menu::create($request->all());
 		return redirect('/menu');
 	}
+	public function edit($id) {
+		$menu = Menu::find($id);
+		return view('menu.edit', compact('menu'));
+	}
+	public function update(Request $request, $id) {
+		Menu::find($id)->update($request->all());
+		return redirect('/menu');
+	}
+	public function delete($id) {
+		Menu::find($id)->delete();
+		return redirect('/menu');
+	}
 }
