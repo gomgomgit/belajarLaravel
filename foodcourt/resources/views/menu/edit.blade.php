@@ -39,7 +39,7 @@
 				<td>
 					<select name="category_id">
 						@foreach($categories as $category)
-							<option value="{{$category->id}}">{{$category->name}}</option>
+							<option value="{{$category->id}}" {{$data->category->id == $category->id ? 'selected' : ''}}>{{$category->name}}</option>
 						@endforeach
 					</select>
 				</td>

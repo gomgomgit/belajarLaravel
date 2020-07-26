@@ -33,8 +33,9 @@ class MenuController extends Controller
     }
     public function edit($id)
     {
+        $categories = Category::all();
         $data = $this->model->find($id);
-        return view($this->view . '.edit', compact('data'));
+        return view($this->view . '.edit', compact('data', 'categories'));
     }
     public function update(Request $request, $id)
     {
