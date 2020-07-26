@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Category;
 use App\Model\Menu;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,8 @@ class MenuController extends Controller
     }
     public function create()
     {
-        return view($this->view . '.create');
+        $category = Category::all();
+        return view($this->view . '.create', compact('category'));
     }
     public function store(Request $request)
     {
