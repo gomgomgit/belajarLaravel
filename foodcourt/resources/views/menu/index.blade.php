@@ -32,7 +32,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($menus as $menu)
+			@foreach($datas as $menu)
 			<tr>
 				<td>{{$menu->name}}</td>
 				<td>{{$menu->category}}</td>
