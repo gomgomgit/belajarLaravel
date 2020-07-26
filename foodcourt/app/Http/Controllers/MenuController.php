@@ -41,7 +41,7 @@ class MenuController extends Controller
     }
     public function delete($id)
     {
-        Menu::find($id)->delete();
+        $this->model->find($id)->delete();
         return redirect($this->redirect);
     }
 }
