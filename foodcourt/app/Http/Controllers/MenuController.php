@@ -5,29 +5,43 @@ namespace App\Http\Controllers;
 use App\Model\Menu;
 use Illuminate\Http\Request;
 
-class MenuController extends Controller {
-	public function index() {
-		$menus = Menu::all();
+class MenuController extends Controller
+{
+    public function __contruct()
+    {
+        $this->model = new Menu();
+        $this->redirect = '/menus';
+        $this->view = 'menu';
+    }
 
-		return view('menu.index', compact('menus'));
-	}
-	public function create() {
-		return view('menu.create');
-	}
-	public function store(Request $request) {
-		Menu::create($request->all());
-		return redirect('/menus');
-	}
-	public function edit($id) {
-		$menu = Menu::find($id);
-		return view('menu.edit', compact('menu'));
-	}
-	public function update(Request $request, $id) {
-		Menu::find($id)->update($request->all());
-		return redirect('/menus');
-	}
-	public function delete($id) {
-		Menu::find($id)->delete();
-		return redirect('/menus');
-	}
+    public function index()
+    {
+        $datas = $this->model->all();
+
+        return view($this->view . '.index', compact('datas'));
+    }
+    public function create()
+    {
+        return view($this->view . '.create');
+    }
+    public function store(Request $request)
+    {
+        $this->model->create($request->all());
+        return redirect($this->redirect);
+    }
+    public function edit($id)
+    {
+        $data = $this->model->find($id);
+        return view($this->view . '.edit', compact('data'));
+    }
+    public function update(Request $request, $id)
+    {
+        $this->model->find($id)->update($request->all());
+        return redirect($this->redirect);
+    }
+    public function delete($id)
+    {
+        Menu::find($id)->delete();
+        return redirect($this->redirect);
+    }
 }
