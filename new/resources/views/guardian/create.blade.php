@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
+	@extends('layout.app')
+
+	@section('head-script')
 	<style type="text/css">
 		body {
 			padding: 20px 100px;
 		}
 	</style>
-</head>
-<body>
+	@endsection
+
+	@section('content')
 
 	<h3>Create</h3>
 	<form method="post" action="/guardians/store">
@@ -45,6 +45,4 @@
 		</table>
 		<input type="submit" value="Store">
 	</form>
-
-</body>
-</html>
+	@endsection

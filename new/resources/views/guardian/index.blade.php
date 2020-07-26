@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
+	@extends('layout.app')
 
+	@section('title', 'Guardian')
+
+	@section('head-script')
 	<style type="text/css">
 		body {
 			padding: 20px 100px;
@@ -11,8 +11,10 @@
 			padding: 5px;
 		}
 	</style>
-</head>
-<body>
+	@endsection
+
+
+	@section('content')
 	<h3>Data Wali</h3>
 	<table border="1" style="width: 100%">
 		<thead>
@@ -24,6 +26,7 @@
 				<th>Tanggal Lahir</th>
 				<th>Alamat</th>
 				<th>Orangtua Kandung</th>
+				<th>Students</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -37,6 +40,7 @@
 					<td>{{$guardian->birth_date}}</td>
 					<td>{{$guardian->address}}</td>
 					<td>{!!$guardian->is_parent ? 'v' : 'x'!!}</td>
+					<td>{{$guardian->students()->count()}}</td>
 					<td>
 						<button>
 							<a href="/guardians/edit/{{$guardian->id}}">Edit</a>
@@ -60,6 +64,5 @@
 		</tbody>
 	</table>
 	<p><a href="/guardians/create">Create</a></p>
+	@endsection
 
-</body>
-</html>

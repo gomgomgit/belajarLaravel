@@ -6,8 +6,12 @@ use App\Model\Guardian;
 use Illuminate\Http\Request;
 
 class GuardianController extends Controller {
+	function __construct() {
+		$this->model = new Guardian();
+	}
+
 	public function index() {
-		$guardians = Guardian::all();
+		$guardians = $this->model->all();
 
 		return view('guardian.index', compact('guardians'));
 	}
@@ -15,7 +19,7 @@ class GuardianController extends Controller {
 		return view('guardian.create');
 	}
 	public function store(Request $request) {
-		$guard = new Guardian;
+		$guard = $this->model;
 		$guard->name = $request->name;
 		$guard->nik = $request->nik;
 		$guard->phone = $request->phone;
@@ -31,12 +35,12 @@ class GuardianController extends Controller {
 		return redirect('/guardians');
 	}
 	public function edit($id) {
-		$guardian = Guardian::find($id);
+		$guardian = $this->model->find($id);
 
 		return view('guardian.edit', compact('guardian'));
 	}
 	public function update(Request $request, $id) {
-		$guard = Guardian::find($id);
+		$guard = $this->model->find($id);
 		$guard->name = $request->name;
 		$guard->nik = $request->nik;
 		$guard->phone = $request->phone;
@@ -50,7 +54,7 @@ class GuardianController extends Controller {
 		return redirect('/guardians');
 	}
 	public function delete($id) {
-		Guardian::find($id)->delete();
+		$this->model->find($id)->delete();
 		return redirect('/guardians');
 	}
 }

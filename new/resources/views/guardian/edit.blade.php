@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
+
+	@extends('layout.app')
+
+	@section('title', 'Guardian')
+
+	@section('head-script')
 	<style type="text/css">
 		body {
 			padding: 20px 100px;
 		}
 	</style>
-</head>
-<body>
+	@endsection
 
+	@section('content')
 	<h3>Create</h3>
 	<form method="post" action="/guardians/update/{{$guardian->id}}">
 		@csrf
@@ -52,6 +54,4 @@
 		</table>
 		<input type="submit" value="Update">
 	</form>
-
-</body>
-</html>
+	@endsection
