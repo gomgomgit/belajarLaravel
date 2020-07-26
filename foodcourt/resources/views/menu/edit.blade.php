@@ -23,42 +23,42 @@
 </head>
 <body>
 	<h3>Tambah Menu</h3>
-	<form method="post" action="/menus/update/{{$menu->id}}">
+	<form method="post" action="/menus/update/{{$data->id}}">
 		@method('PUT')
 		@csrf
 		<table>
 			<tr>
 				<td>Nama</td>
 				<td class="no-border">:</td>
-				<td><input type="text" name="name" value="{{$menu->name}}"></td>
+				<td><input type="text" name="name" value="{{$data->name}}"></td>
 			</tr>
 			<tr>
 				<td>Kategori</td>
 				<td class="no-border">:</td>
-				<td><input type="text" name="category" value="{{$menu->category}}"></td>
+				<td><input type="text" name="category" value="{{$data->category}}"></td>
 			</tr>
 			<tr>
 				<td>Stok</td>
 				<td class="no-border">:</td>
-				<td><input type="number" name="stock" value="{{$menu->stock}}"></td>
+				<td><input type="number" name="stock" value="{{$data->stock}}"></td>
 			</tr>
 			<tr>
 				<td>Status</td>
 				<td class="no-border">:</td>
 				<td>
-					<input type="radio" name="status" value="1" {{$menu->status?'checked':''}}>Tersedia
-					<input type="radio" name="status" value="0" {{$menu->status?'':'checked'}}>Belum Tersedia
+					<input type="radio" name="status" value="1" {{$data->status?'checked':''}}>Tersedia
+					<input type="radio" name="status" value="0" {{$data->status?'':'checked'}}>Belum Tersedia
 				</td>
 			</tr>
 			<tr>
 				<td>Harga</td>
 				<td class="no-border">:</td>
-				<td><input type="number" name="price" value="{{$menu->price}}"></td>
+				<td><input type="number" name="price" value="{{$data->price}}"></td>
 			</tr>
 			<tr>
 				<td>Gambar</td>
 				<td class="no-border">:</td>
-				<td><input type="file" name="image" value="{{$menu->image}}"></td>
+				<td><input type="file" name="image" value="{{$data->image}}"></td>
 			</tr>
 		</table>
 		<br>

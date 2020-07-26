@@ -32,17 +32,17 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($datas as $menu)
+			@foreach($datas as $data)
 			<tr>
-				<td>{{$menu->name}}</td>
-				<td>{{$menu->category}}</td>
-				<td>{{$menu->stock}}</td>
-				<td>{{$menu->status ? 'Tersedia' : 'Habis'}}</td>
-				<td>{{$menu->price}}</td>
-				<td>{{$menu->image ? $menu->image : 'Not Available'}}</td>
+				<td>{{$data->name}}</td>
+				<td>{{$data->category}}</td>
+				<td>{{$data->stock}}</td>
+				<td>{{$data->status ? 'Tersedia' : 'Habis'}}</td>
+				<td>{{$data->price}}</td>
+				<td>{{$data->image ? $data->image : 'Not Available'}}</td>
 				<td>
-					<a href="/menus/edit/{{$menu->id}}">Edit</a>
-					<form method="post" action="/menus/delete/{{$menu->id}}">
+					<a href="/menus/edit/{{$data->id}}">Edit</a>
+					<form method="post" action="/menus/delete/{{$data->id}}">
 						@csrf @method('DELETE')
 						<button>Delete</button>
 					</form>
