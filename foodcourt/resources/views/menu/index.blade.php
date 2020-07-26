@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
+@extends('layout.app')
+
+@section('head-script')
 	<title>Menu</title>
 
 	<style type="text/css">
@@ -15,8 +15,9 @@
 			padding: 3px;
 		}
 	</style>
-</head>
-<body>
+@endsection
+
+@section('content')
 	<h3>Menu</h3>
 	<h5><a href="/menus/create">Tambah data</a></h5>
 	<table border="3">
@@ -51,5 +52,4 @@
 			@endforeach
 		</tbody>
 	</table>
-</body>
-</html>
+@endsection

@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
+@extends('layout.app')
+
+@section('head-script')
 	<title>Menu</title>
 
 	<style type="text/css">
@@ -20,8 +20,9 @@
 			border-left-style: hidden;
 		}
 	</style>
-</head>
-<body>
+@endsection
+
+@section('content')
 	<h3>Tambah Menu</h3>
 	<form method="post" action="/menus/store">
 		@csrf
@@ -60,5 +61,4 @@
 		<br>
 		<input type="submit" value="Submit">
 	</form>
-</body>
-</html>
+@endsection
