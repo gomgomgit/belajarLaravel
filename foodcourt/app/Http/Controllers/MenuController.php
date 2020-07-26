@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-    public function __contruct()
+    public function __construct()
     {
         $this->model = new Menu();
         $this->redirect = '/menus';
