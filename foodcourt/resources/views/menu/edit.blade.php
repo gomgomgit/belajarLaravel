@@ -36,7 +36,13 @@
 			<tr>
 				<td>Kategori</td>
 				<td class="no-border">:</td>
-				<td><input type="text" name="category" value="{{$data->category}}"></td>
+				<td>
+					<select name="category_id">
+						@foreach($categories as $category)
+							<option value="{{$category->id}}">{{$category->name}}</option>
+						@endforeach
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<td>Stok</td>

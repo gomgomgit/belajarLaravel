@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     protected $fillable = [
-        'name', 'category', 'stock', 'status', 'price', 'image',
+        'name', 'category_id', 'stock', 'status', 'price', 'image',
     ];
 
     public function category()
     {
-        $this->belongsTo('App\Model\Menu');
+        return $this->belongsTo('App\Model\Category');
     }
 }

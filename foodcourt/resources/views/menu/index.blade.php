@@ -36,7 +36,7 @@
 			@foreach($datas as $data)
 			<tr>
 				<td>{{$data->name}}</td>
-				<td>{{$data->category}}</td>
+				<td>{{$data->category->name}}</td>
 				<td>{{$data->stock}}</td>
 				<td>{{$data->status ? 'Tersedia' : 'Habis'}}</td>
 				<td>{{$data->price}}</td>
