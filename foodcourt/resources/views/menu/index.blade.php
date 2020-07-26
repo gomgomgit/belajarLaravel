@@ -18,7 +18,7 @@
 </head>
 <body>
 	<h3>Menu</h3>
-	<h5><a href="/menu/create">Tambah data</a></h5>
+	<h5><a href="/menus/create">Tambah data</a></h5>
 	<table border="3">
 		<thead>
 			<tr>
@@ -41,8 +41,8 @@
 				<td>{{$menu->price}}</td>
 				<td>{{$menu->image ? $menu->image : 'Not Available'}}</td>
 				<td>
-					<a href="/menu/edit/{{$menu->id}}">Edit</a>
-					<form method="post" action="/menu/delete/{{$menu->id}}">
+					<a href="/menus/edit/{{$menu->id}}">Edit</a>
+					<form method="post" action="/menus/delete/{{$menu->id}}">
 						@csrf @method('DELETE')
 						<button>Delete</button>
 					</form>

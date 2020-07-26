@@ -23,7 +23,7 @@
 </head>
 <body>
 	<h3>Tambah Menu</h3>
-	<form method="post" action="/menu/store">
+	<form method="post" action="/menus/store">
 		@csrf
 		<table>
 			<tr>

@@ -23,7 +23,7 @@
 </head>
 <body>
 	<h3>Tambah Menu</h3>
-	<form method="post" action="/menu/update/{{$menu->id}}">
+	<form method="post" action="/menus/update/{{$menu->id}}">
 		@method('PUT')
 		@csrf
 		<table>

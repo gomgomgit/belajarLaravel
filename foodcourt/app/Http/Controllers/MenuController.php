@@ -16,7 +16,7 @@ class MenuController extends Controller {
 	}
 	public function store(Request $request) {
 		Menu::create($request->all());
-		return redirect('/menu');
+		return redirect('/menus');
 	}
 	public function edit($id) {
 		$menu = Menu::find($id);
@@ -24,10 +24,10 @@ class MenuController extends Controller {
 	}
 	public function update(Request $request, $id) {
 		Menu::find($id)->update($request->all());
-		return redirect('/menu');
+		return redirect('/menus');
 	}
 	public function delete($id) {
 		Menu::find($id)->delete();
-		return redirect('/menu');
+		return redirect('/menus');
 	}
 }
