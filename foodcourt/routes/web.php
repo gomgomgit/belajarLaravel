@@ -17,9 +17,16 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Route::get('/menu', 'MenuController@index');
-Route::get('/menu/create', 'MenuController@create');
-Route::post('/menu/store', 'MenuController@store');
-Route::get('/menu/edit/{id}', 'MenuController@edit');
-Route::put('/menu/update/{id}', 'MenuController@update');
-Route::delete('/menu/delete/{id}', 'MenuController@delete');
+Route::get('/menus', 'MenuController@index');
+Route::get('/menus/create', 'MenuController@create');
+Route::post('/menus/store', 'MenuController@store');
+Route::get('/menus/edit/{id}', 'MenuController@edit');
+Route::put('/menus/update/{id}', 'MenuController@update');
+Route::delete('/menus/delete/{id}', 'MenuController@delete');
+
+Route::get('/categories', 'CategoryController@index');
+Route::get('/categories/create', 'CategoryController@create');
+Route::post('/categories/store', 'CategoryController@store');
+Route::get('/categories/edit/{id}', 'CategoryController@edit');
+Route::put('/categories/update/{id}', 'CategoryController@update');
+Route::delete('/categories/delete/{id}', 'CategoryController@delete');
