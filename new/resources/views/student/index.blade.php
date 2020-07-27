@@ -20,8 +20,8 @@
 	<table border="2" style="width: 100%">
 		<thead>
 			<tr>
-				<th>guardian id</th>
 				<th>name</th>
+				<th>guardian</th>
 				<th>nis</th>
 				<th>gender</th>
 				<th>birth date</th>
@@ -36,8 +36,8 @@
 		<tbody>
 			@foreach($students as $student)
 				<tr>
-					<td>{{$student->guardian->name }}</td>
 					<td>{{$student->name}}</td>
+					<td>{{$student->guardian->name }}</td>
 					<td>{{$student->nis}}</td>
 					<td>{{$student->gender}}</td>
 					<td>{{$student->birth_date}}</td>
