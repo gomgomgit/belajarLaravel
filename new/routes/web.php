@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', function () {
-	return view('welcome');
+    return view('welcome');
 });
 
 Route::get('/guardians', 'GuardianController@index');
@@ -30,3 +30,5 @@ Route::post('/students/store', 'StudentController@store');
 Route::get('/students/edit/{id}', 'StudentController@edit');
 Route::put('/students/update/{id}', 'StudentController@update');
 Route::delete('/students/delete/{id}', 'StudentController@delete');
+
+Route::get('/login', 'AuthController@login');
