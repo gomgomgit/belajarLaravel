@@ -12,5 +12,10 @@
 		<a href="/login">Login</a>
 		||
 		<a href="/register">Register</a>
+		||
+		<form method="post" action="/logout">
+			@csrf
+			<button>Logout</button>
+		</form>
 	</div>
 </nav>
