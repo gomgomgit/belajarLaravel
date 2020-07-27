@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('/guardians', 'GuardianController@index');
 Route::get('/guardians/create', 'GuardianController@create');
@@ -32,3 +30,7 @@ Route::put('/students/update/{id}', 'StudentController@update');
 Route::delete('/students/delete/{id}', 'StudentController@delete');
 
 Route::get('/login', 'AuthController@login');
+Route::get('/register', 'AuthController@register');
+Route::post('/register-process', 'AuthController@registerProcess');
+Route::post('/login-process', 'AuthController@loginProcess');
+Route::post('/logout', 'AuthController@logout');

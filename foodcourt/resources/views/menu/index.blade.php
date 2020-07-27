@@ -19,7 +19,7 @@
 
 @section('content')
 	<h3>Menu</h3>
-	<h5><a href="/menus/create">Tambah data</a></h5>
+	<h5><a href="/menus/create">Tambah Menu</a></h5>
 	<table border="3">
 		<thead>
 			<tr>
