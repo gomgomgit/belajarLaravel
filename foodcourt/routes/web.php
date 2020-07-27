@@ -28,3 +28,9 @@ Route::post('/categories/store', 'CategoryController@store');
 Route::get('/categories/edit/{id}', 'CategoryController@edit');
 Route::put('/categories/update/{id}', 'CategoryController@update');
 Route::delete('/categories/delete/{id}', 'CategoryController@delete');
+
+Route::get('/login', 'AuthController@login');
+Route::get('/register', 'AuthController@register');
+Route::post('/login-process', 'AuthController@loginProcess');
+Route::post('/register-process', 'AuthController@registerProcess');
+Route::post('/logout', 'AuthController@logout');

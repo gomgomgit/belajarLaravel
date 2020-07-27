@@ -16,12 +16,12 @@
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
-                height: 100vh;
+                /*height: 100vh;*/
                 margin: 0;
             }
 
             .full-height {
-                height: 100vh;
+                height: 90vh;
             }
 
             .flex-center {
@@ -66,7 +66,7 @@
 
     @section('content')
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+            {{-- @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -78,16 +78,16 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+            @endif --}}
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    {{ auth()->check() ? "Welcome " . auth()->user()->name : 'Food Court' }}
                 </div>
 
                 <div class="links">
                     <a href="/menus">Menu</a>
-                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="/categories">Category</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
