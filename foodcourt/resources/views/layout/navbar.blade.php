@@ -13,11 +13,11 @@
 		||
 		<a href="/register">Register</a>
 		||
-		{{ auth()->check() ?
-		<form method="post" action="/logout">
+		@if(auth()->check())
+		<form method="post" action="/logout" >
 			@csrf
 			<button>Logout</button>
 		</form>
-		: '' }}
+		@endif
 	</div>
 </nav>

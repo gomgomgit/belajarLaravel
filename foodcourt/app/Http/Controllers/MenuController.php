@@ -10,6 +10,8 @@ class MenuController extends Controller
 {
     public function __construct()
     {
+        $this->middleware('auth');
+
         $this->model = new Menu();
         $this->redirect = '/menus';
         $this->view = 'menu';
