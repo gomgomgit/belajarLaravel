@@ -13,9 +13,11 @@
 		||
 		<a href="/register">Register</a>
 		||
+		{{ auth()->check() ?
 		<form method="post" action="/logout">
 			@csrf
 			<button>Logout</button>
 		</form>
+		: '' }}
 	</div>
 </nav>
