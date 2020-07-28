@@ -6,39 +6,48 @@ use App\Model\Guardian;
 use App\Model\Student;
 use Illuminate\Http\Request;
 
-class StudentController extends Controller {
-	function __construct() {
-		$this->model = new Student();
-	}
+class StudentController extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->model = new Student();
+    }
 
-	public function index() {
-		$students = $this->model->all();
+    public function index()
+    {
+        $students = $this->model->all();
 
-		return view('student.index', compact('students'));
-	}
-	public function create() {
-		$guardians = Guardian::all();
+        return view('student.index', compact('students'));
+    }
+    public function create()
+    {
+        $guardians = Guardian::all();
 
-		return view('student.create', compact('guardians'));
-	}
-	public function store(Request $request) {
+        return view('student.create', compact('guardians'));
+    }
+    public function store(Request $request)
+    {
 
-		$this->model->create($request->all());
+        $this->model->create($request->all());
 
-		return redirect('/students');
-	}
-	public function edit($id) {
-		$student = $this->model->find($id);
+        return redirect('/students');
+    }
+    public function edit($id)
+    {
+        $student = $this->model->find($id);
 
-		return view('student.edit', compact('student'));
-	}
-	public function update(Request $request, $id) {
-		$this->model->find($id)->update($request->all());
+        return view('student.edit', compact('student'));
+    }
+    public function update(Request $request, $id)
+    {
+        $this->model->find($id)->update($request->all());
 
-		return redirect('/students');
-	}
-	public function delete($id) {
-		$this->model->find($id)->delete();
-		return redirect('/students');
-	}
+        return redirect('/students');
+    }
+    public function delete($id)
+    {
+        $this->model->find($id)->delete();
+        return redirect('/students');
+    }
 }
