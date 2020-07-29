@@ -11,42 +11,43 @@
 			padding: 5px;
 		}
 	</style>
+	<link rel="stylesheet" type="text/css" href="{{ mix('/css/main.css') }}">
 	@endsection
 
 
 	@section('content')
-	<h3>Daftar Siswa</h3>
-	<a href="/students/create">Tambah Data</a>
-	<table border="2" style="width: 100%">
+	<h3 class="text-3xl font-bold">Daftar Siswa</h3>
+	<a href="/students/create" class="text-blue-600">Tambah Data</a>
+	<table class="w-full">
 		<thead>
 			<tr>
-				<th>name</th>
-				<th>guardian</th>
-				<th>nis</th>
-				<th>gender</th>
-				<th>birth date</th>
-				<th>address</th>
-				<th>class</th>
-				<th>majors</th>
-				<th>height</th>
-				<th>weight</th>
-				<th>action</th>
+				<th class="border border-gray-400">name</th>
+				<th class="border border-gray-400">guardian</th>
+				<th class="border border-gray-400">nis</th>
+				<th class="border border-gray-400">gender</th>
+				<th class="border border-gray-400">birth date</th>
+				<th class="border border-gray-400">address</th>
+				<th class="border border-gray-400">class</th>
+				<th class="border border-gray-400">majors</th>
+				<th class="border border-gray-400">height</th>
+				<th class="border border-gray-400">weight</th>
+				<th class="border border-gray-400">action</th>
 			</tr>
 		</thead>
 		<tbody>
 			@foreach($students as $student)
 				<tr>
-					<td>{{$student->name}}</td>
-					<td>{{$student->guardian->name}}</td>
-					<td>{{$student->nis}}</td>
-					<td>{{$student->gender}}</td>
-					<td>{{$student->birth_date}}</td>
-					<td>{{$student->address}}</td>
-					<td>{{$student->class}}</td>
-					<td>{{$student->majors}}</td>
-					<td>{{$student->height}}</td>
-					<td>{{$student->weight}}</td>
-					<td>
+					<td class="border border-gray-400">{{$student->name}}</td>
+					<td class="border border-gray-400">{{$student->guardian->name}}</td>
+					<td class="border border-gray-400">{{$student->nis}}</td>
+					<td class="border border-gray-400">{{$student->gender}}</td>
+					<td class="border border-gray-400">{{$student->birth_date}}</td>
+					<td class="border border-gray-400">{{$student->address}}</td>
+					<td class="border border-gray-400">{{$student->class}}</td>
+					<td class="border border-gray-400">{{$student->majors}}</td>
+					<td class="border border-gray-400">{{$student->height}}</td>
+					<td class="border border-gray-400">{{$student->weight}}</td>
+					<td class="border border-gray-400">
 						<button>
 							<a href="/students/edit/{{$student->id}}">Edit</a>
 						</button>

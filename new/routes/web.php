@@ -29,8 +29,12 @@ Route::get('/students/edit/{id}', 'StudentController@edit');
 Route::put('/students/update/{id}', 'StudentController@update');
 Route::delete('/students/delete/{id}', 'StudentController@delete');
 
-Route::get('/login', 'AuthController@login');
-Route::get('/register', 'AuthController@register');
-Route::post('/register-process', 'AuthController@registerProcess');
-Route::post('/login-process', 'AuthController@loginProcess');
-Route::post('/logout', 'AuthController@logout');
+// Route::get('/login', 'AuthController@login');
+// Route::get('/register', 'AuthController@register');
+// Route::post('/register-process', 'AuthController@registerProcess');
+// Route::post('/login-process', 'AuthController@loginProcess');
+// Route::post('/logout', 'AuthController@logout');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
