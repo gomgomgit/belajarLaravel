@@ -16,9 +16,9 @@
 
 
 	@section('content')
-	<h3 class="text-3xl font-bold">Daftar Siswa</h3>
-	<a href="/students/create" class="text-blue-600">Tambah Data</a>
-	<table class="w-full">
+	<h3 class="text-3xl font-bold my-5">Daftar Siswa</h3>
+	<a href="/students/create" class="text-white bg-blue-600 px-3 py-2 font-bold my-3 rounded">+ Tambah Data</a>
+	<table class="w-full my-4">
 		<thead>
 			<tr>
 				<th class="border border-gray-400">name</th>
