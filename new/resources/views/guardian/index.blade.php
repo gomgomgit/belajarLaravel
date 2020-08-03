@@ -16,6 +16,7 @@
 
 	@section('content')
 	<h3>Data Wali</h3>
+	<p><a href="/guardians/create">Create</a></p>
 	<table border="1" style="width: 100%">
 		<thead>
 			<tr>
@@ -27,6 +28,7 @@
 				<th>Alamat</th>
 				<th>Orangtua Kandung</th>
 				<th>Students</th>
+				<th>Created At</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -41,6 +43,7 @@
 					<td>{{$guardian->address}}</td>
 					<td>{!!$guardian->is_parent ? 'v' : 'x'!!}</td>
 					<td>{{$guardian->students()->count()}}</td>
+					<td>{{$guardian->created_at}}</td>
 					<td>
 						<button>
 							<a href="/guardians/edit/{{$guardian->id}}">Edit</a>
@@ -63,6 +66,4 @@
 			@endforeach
 		</tbody>
 	</table>
-	<p><a href="/guardians/create">Create</a></p>
 	@endsection
-

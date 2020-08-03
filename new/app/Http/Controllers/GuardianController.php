@@ -15,7 +15,7 @@ class GuardianController extends Controller
 
     public function index()
     {
-        $guardians = $this->model->all();
+        $guardians = $this->model->orderBy('created_at', 'desc')->get();
 
         return view('guardian.index', compact('guardians'));
     }
@@ -25,6 +25,16 @@ class GuardianController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'nik' => 'required',
+            'phone' => 'required',
+            'gender' => 'required',
+            'birth_date' => 'required',
+            'address' => 'required',
+            'is_parent' => 'required',
+        ]);
+
         $guard = $this->model;
         $guard->name = $request->name;
         $guard->nik = $request->nik;
@@ -48,6 +58,16 @@ class GuardianController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required|max:255',
+            'nik' => 'required',
+            'phone' => 'required',
+            'gender' => 'required',
+            'birth_date' => 'required',
+            'address' => 'required',
+            'is_parent' => 'required',
+        ]);
+
         $guard = $this->model->find($id);
         $guard->name = $request->name;
         $guard->nik = $request->nik;

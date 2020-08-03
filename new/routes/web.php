@@ -37,4 +37,6 @@ Route::delete('/students/delete/{id}', 'StudentController@delete');
 
 Auth::routes();
 
+Auth::routes(['verify' => true]);
+
 Route::get('/home', 'HomeController@index')->name('home');
