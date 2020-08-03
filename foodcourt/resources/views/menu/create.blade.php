@@ -24,13 +24,22 @@
 
 @section('content')
 	<h3>Tambah Menu</h3>
+
+	@if($errors->any())
+		<ul>
+			@foreach($errors->all() as $error)
+				<li>{{ $error }}</li>
+			@endforeach
+		</ul>
+	@endif
+
 	<form method="post" action="/menus/store">
 		@csrf
 		<table>
 			<tr>
 				<td>Nama</td>
 				<td class="no-border">:</td>
-				<td><input type="text" name="name"></td>
+				<td><input type="text" name="name" value="{{ old('name') }}"></td>
 			</tr>
 			<tr>
 				<td>Kategori</td>
@@ -38,7 +47,7 @@
 				<td>
 					<select name="category_id">
 						@foreach($categories as $category)
-							<option value="{{$category->id}}">{{$category->name}}</option>
+							<option value="{{$category->id}}" {{ old('category_id') == $category->id ? 'selected' : '' }} >{{$category->name}}</option>
 						@endforeach
 					</select>
 				</td>
@@ -46,22 +55,25 @@
 			<tr>
 				<td>Stok</td>
 				<td class="no-border">:</td>
-				<td><input type="number" name="stock"></td>
+				<td><input type="number" name="stock" value="{{ old('stock') }}"></td>
 			</tr>
 			<tr>
 				<td>Status</td>
 				<td class="no-border">:</td>
-				<td><input type="radio" name="status" value="1">Tersedia <input type="radio" name="status" value="0">Belum Tersedia</td>
+				<td>
+					<input type="radio" name="status" value="1" {{ old('status') == '1' ? 'checked' :'' }}>Tersedia
+					<input type="radio" name="status" value="0" {{ old('status') == '0' ? 'checked' : '' }}>Belum Tersedia
+				</td>
 			</tr>
 			<tr>
 				<td>Harga</td>
 				<td class="no-border">:</td>
-				<td><input type="number" name="price"></td>
+				<td><input type="number" name="price" value="{{ old('price') }}"></td>
 			</tr>
 			<tr>
 				<td>Gambar</td>
 				<td class="no-border">:</td>
-				<td><input type="file" name="image"></td>
+				<td><input type="file" name="image" value="{{ old('image') }}"></td>
 			</tr>
 		</table>
 		<br>

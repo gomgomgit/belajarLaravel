@@ -19,7 +19,7 @@ class MenuController extends Controller
 
     public function index()
     {
-        $datas = $this->model->all();
+        $datas = $this->model->orderBy('name')->get();
 
         return view($this->view . '.index', compact('datas'));
     }
@@ -30,6 +30,13 @@ class MenuController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'category_id' => 'required',
+            'stock' => 'required',
+            'status' => 'required',
+            'price' => 'required',
+        ]);
         $this->model->create($request->all());
         return redirect($this->redirect);
     }
@@ -41,6 +48,14 @@ class MenuController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'category_id' => 'required',
+            'stock' => 'required',
+            'status' => 'required',
+            'price' => 'required',
+        ]);
+
         $this->model->find($id)->update($request->all());
         return redirect($this->redirect);
     }
