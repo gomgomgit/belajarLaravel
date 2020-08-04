@@ -27,10 +27,10 @@ class GuardianController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'nik' => 'required',
+            'nik' => 'required|unique:guardians,nik',
             'phone' => 'required',
             'gender' => 'required',
-            'birth_date' => 'required',
+            'birth_date' => 'required|date',
             'address' => 'required',
             'is_parent' => 'required',
         ]);
@@ -60,7 +60,7 @@ class GuardianController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
-            'nik' => 'required',
+            'nik' => 'required|unique:guardians,nik,' . $id,
             'phone' => 'required',
             'gender' => 'required',
             'birth_date' => 'required',
