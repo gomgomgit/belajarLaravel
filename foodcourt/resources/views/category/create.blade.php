@@ -24,7 +24,7 @@
 
 @section('content')
 	<h3>Tambah Category</h3>
-	<form method="post" action="/categories/store">
+	<form method="post" action="{{ route('storeCategory') }}">
 		@csrf
 		<table>
 			<tr>

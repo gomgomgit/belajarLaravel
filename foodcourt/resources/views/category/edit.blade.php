@@ -24,7 +24,7 @@
 
 @section('content')
 	<h3>Tambah Category</h3>
-	<form method="post" action="/categories/update/{{$data->id}}">
+	<form method="post" action="{{ route('updateCategory', ['id' => $data->id]) }}">
 		@method('PUT')
 		@csrf
 		<table>

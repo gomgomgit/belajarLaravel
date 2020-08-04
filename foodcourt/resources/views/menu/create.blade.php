@@ -33,7 +33,7 @@
 		</ul>
 	@endif
 
-	<form method="post" action="/menus/store">
+	<form method="post" action="{{ route('storeMenu') }}">
 		@csrf
 		<table>
 			<tr>

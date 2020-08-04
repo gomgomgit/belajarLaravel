@@ -19,7 +19,8 @@
 
 @section('content')
 	<h3>Menu</h3>
-	<h5><a href="/menus/create">Tambah Menu</a></h5>
+	{{-- <h5><a href="/menus/create">Tambah Menu</a></h5> --}}
+	<h5><a href="{{ route('createMenu') }}">Tambah Menu</a></h5>
 	<table border="3">
 		<thead>
 			<tr>
@@ -42,8 +43,10 @@
 				<td>{{$data->price}}</td>
 				<td>{{$data->image ? $data->image : 'Not Available'}}</td>
 				<td>
-					<a href="/menus/edit/{{$data->id}}">Edit</a>
-					<form method="post" action="/menus/delete/{{$data->id}}">
+					{{-- <a href="/menus/edit/{{$data->id}}">Edit</a> --}}
+					<a href="{{ route('editMenu', ['id' => $data->id ]) }}">Edit</a>
+					{{-- <form method="post" action="/menus/delete/{{$data->id}}"> --}}
+					<form method="post" action="{{ route('deleteMenu', ['id' => $data->id]) }}">
 						@csrf @method('DELETE')
 						<button>Delete</button>
 					</form>

@@ -24,7 +24,7 @@
 
 @section('content')
 	<h3>Tambah Menu</h3>
-	<form method="post" action="/menus/update/{{$data->id}}">
+	<form method="post" action="{{ route('updateMenu', ['id' => $data->id ]) }}">
 		@method('PUT')
 		@csrf
 		<table>
